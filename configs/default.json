@@ -1,0 +1,58 @@
+{
+  "production": {
+    "envName": "production",
+    "domain":"abc.com",
+    "url": "https://www.abc.com",
+    "db": {
+      "host"     : "localhost",
+      "user"     : "root",
+      "password" : "root",
+      "database" : "testdb",
+      "connectionLimit": 50,
+      "useTransaction": {
+        "connectionLimit": 1
+      },
+      "useCursor": {
+        "connectionLimit": 1
+      }
+    },
+    "session":{
+      "cookie":{"secure":false,"maxAge":3600000}
+    },
+    "elasticsearch":{
+      "ELASTIC_URL":"",
+      "ELASTIC_REQ_TIMEOUT":600000
+    },
+    "logger":{
+      "LOG_LABEL":"prod-boilerplate"
+    }
+  },
+  "development": {
+    "envName": "development",
+    "domain":"abc.com",
+    "url": "https://www.abc.com",
+    "db": {
+      "host"     : "localhost",
+      "user"     : "root",
+      "password" : "root",
+      "database" : "testdb",
+      "connectionLimit": 50,
+      "useTransaction": {
+        "connectionLimit": 1
+      },
+      "useCursor": {
+        "connectionLimit": 1
+      }
+    },
+    "session":{
+      "cookie":{"secure":false,"maxAge":3600000}
+    },
+    "elasticsearch":{
+      "ELASTIC_URL":"",
+      "ELASTIC_REQ_TIMEOUT":""
+    },
+    "logger":{
+      "LOG_LABEL":"boilerplate"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "express-boilerplate",
+  "version": "0.0.1",
+  "description": "Express Boilerplate for Monolithic Web Applications",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "docker:build": "docker build --build-arg NODE_ENV=production -t raw-boilerplate .",
+    "docker:run": "docker run -p 4000:4000 raw-boilerplate"
+  },
+  "keywords": [],
+  "author": "akshay",
+  "license": "ISC",
+  "dependencies": {
+    "async-foreach": "0.1.3",
+    "body-parser": "1.19.0",
+    "elasticsearch": "^16.3.0",
+    "express": "4.17.1",
+    "jsonwebtoken": "8.5.1",
+    "lodash": "4.17.15",
+    "method-override": "3.0.0",
+    "moment": "2.24.0",
+    "nodemailer": "6.3.0",
+    "q": "1.5.1",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^4.1.0",
+    "winston-elasticsearch": "^0.7.13"
+  }
+}

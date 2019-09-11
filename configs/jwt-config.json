@@ -1,0 +1,6 @@
+{
+	"secrete":"my@secret",
+	"tokenOptions":{
+		"expiresIn": "2h"
+	}
+}
