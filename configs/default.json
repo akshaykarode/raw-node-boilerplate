@@ -1,8 +1,8 @@
 {
   "production": {
     "envName": "production",
-    "domain":"abc.com",
-    "url": "https://www.abc.com",
+    "protocol":"http",
+    "host":"localhost",
     "db": {
       "host"     : "localhost",
       "user"     : "root",
@@ -29,8 +29,36 @@
   },
   "development": {
     "envName": "development",
-    "domain":"abc.com",
-    "url": "https://www.abc.com",
+    "protocol":"http",
+    "host":"localhost",
+    "db": {
+      "host"     : "localhost",
+      "user"     : "root",
+      "password" : "root",
+      "database" : "testdb",
+      "connectionLimit": 50,
+      "useTransaction": {
+        "connectionLimit": 1
+      },
+      "useCursor": {
+        "connectionLimit": 1
+      }
+    },
+    "session":{
+      "cookie":{"secure":false,"maxAge":3600000}
+    },
+    "elasticsearch":{
+      "ELASTIC_URL":"",
+      "ELASTIC_REQ_TIMEOUT":""
+    },
+    "logger":{
+      "LOG_LABEL":"boilerplate"
+    }
+  },
+  "test": {
+    "envName": "development",
+    "protocol":"http",
+    "host":"localhost",
     "db": {
       "host"     : "localhost",
       "user"     : "root",

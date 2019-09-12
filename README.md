@@ -15,3 +15,4 @@
 - Dockerized
 - ES9
 - Error Escallations (Application Level)
+- JEST suit
