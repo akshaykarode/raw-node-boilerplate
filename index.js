@@ -9,6 +9,7 @@ const publicDir = __dirname + '/public'
 const _config = require('./configs/default.json')
 
 const Logger = require('./modules/infra/logger')
+const CustomError = require('./modules/comman/error')
 // var DB = require('./modules/db')
 // Global
 config = _config[process.env.NODE_ENV] || _config['development'];
@@ -34,15 +35,21 @@ app.use(bodyParser.urlencoded({
   extended: true,
   limit: '100mb'
 }));
-// app.use();
-app.use(express.static(publicDir));
 
 app.use(Logger(config))
+app.use(express.static(publicDir));
 /* --------  App Configs Ends --------  */
 
 /* --------  Routes --------  */
 require('./modules/routes.js')(router)
 app.use(router)
 /* --------  Routes Ends --------  */
+
+/* --------  Global Error Handler  --------  */
+app.use(function (err, req, res, next) {
+  res.status(500).send(new CustomError(err))
+});
+/* --------  Global Error Handler Ends --------  */
+
 console.log("Server is listening at http://%s:%s", hostname, app.get('port') , " ENV:",config.envName);
 app.listen(app.get('port'), hostname);

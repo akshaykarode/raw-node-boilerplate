@@ -13,3 +13,5 @@
 ## Features
 - Winston Logger/Elasticsearch
 - Dockerized
+- ES9
+- Error Escallations (Application Level)
