@@ -2,6 +2,7 @@
 
 ## Running the project
 - `npm start`
+- Health Status Monitor : `/status`
 
 ## Build & Run the project in Docker
 - `npm run docker:build`
@@ -21,3 +22,4 @@
 - Error Escallations (Application Level)
 - JEST suit (unit & e2e)
 - Stryker
+- Express Status Monitor

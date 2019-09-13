@@ -3,6 +3,7 @@ const router = express.Router()
 const app = express()
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
+const expressStatusMonitor=require('express-status-monitor')
 
 const hostname = process.env.HOSTNAME || 'localhost'
 const publicDir = __dirname + '/public'
@@ -38,6 +39,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(Logger(config))
 app.use(express.static(publicDir));
+app.use(expressStatusMonitor());
 /* --------  App Configs Ends --------  */
 
 /* --------  Routes --------  */
