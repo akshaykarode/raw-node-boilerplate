@@ -1,7 +1,17 @@
 # raw-node-boilerplate
 
+## Features
+- Winston Logger/Elasticsearch
+- Dockerized
+- ES9
+- Error Escallations (Application Level)
+- JEST suit (unit & e2e)
+- Stryker
+- Express Status Monitor
+- Swagger (Swagger UI + Swagger Editor)
+
 ## Running the project
-- `npm start`
+- Quick Start : `npm start`
 - Health Status Monitor : `/status`
 - Swagger API Docs : `/api-docs`
 
@@ -18,13 +28,3 @@
 
 ## Running Swagger Editor
 - `npm run swagger-editor`
-
-## Features
-- Winston Logger/Elasticsearch
-- Dockerized
-- ES9
-- Error Escallations (Application Level)
-- JEST suit (unit & e2e)
-- Stryker
-- Express Status Monitor
-- Swagger (Swagger UI + Swagger Editor)
