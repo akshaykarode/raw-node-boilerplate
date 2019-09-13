@@ -7,12 +7,17 @@
 - `npm run docker:build`
 - `npm run docker:run`
 
-<!-- ## Running unit tets -->
-<!-- - npm run test -->
+## Running Unit Tests
+- `npm run test`
+
+## Running Mutation Tests
+- `stryker run`
+- `npx stryker run --fileLogLevel trace --logLevel debug` (Debug Stryker Execution)
 
 ## Features
 - Winston Logger/Elasticsearch
 - Dockerized
 - ES9
 - Error Escallations (Application Level)
-- JEST suit
+- JEST suit (unit & e2e)
+- Stryker

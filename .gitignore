@@ -7,4 +7,4 @@ coverage/
 swagger.json
 swagger.yaml
 .vscode
-bitbucket-pipelines.yml
+stryker.log
