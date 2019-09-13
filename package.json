@@ -7,7 +7,8 @@
     "start": "node index.js",
     "test": "NODE_ENV=test PORT=4123 jest --coverage --logHeapUsage --forceExit",
     "docker:build": "docker build --build-arg NODE_ENV=production -t raw-boilerplate .",
-    "docker:run": "docker run -p 4000:4000 raw-boilerplate"
+    "docker:run": "docker run -p 4000:4000 raw-boilerplate",
+    "swagger-editor": "docker pull swaggerapi/swagger-editor && docker run -d -p 4001:8080 swaggerapi/swagger-editor"
   },
   "keywords": [],
   "author": "akshay",
@@ -26,6 +27,7 @@
     "nodemailer": "6.3.0",
     "q": "1.5.1",
     "stryker-cli": "^1.0.0",
+    "swagger-ui-express": "^4.1.0",
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^4.1.0",
     "winston-elasticsearch": "^0.7.13"

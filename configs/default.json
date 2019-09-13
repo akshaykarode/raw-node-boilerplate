@@ -25,6 +25,9 @@
     },
     "logger":{
       "LOG_LABEL":"prod-boilerplate"
+    },
+    "swagger":{
+      "enable":false
     }
   },
   "development": {
@@ -53,6 +56,9 @@
     },
     "logger":{
       "LOG_LABEL":"boilerplate"
+    },
+    "swagger":{
+      "enable":true
     }
   },
   "test": {
@@ -81,6 +87,9 @@
     },
     "logger":{
       "LOG_LABEL":"boilerplate"
+    },
+    "swagger":{
+      "enable":false
     }
   }
 }

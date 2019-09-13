@@ -44,6 +44,7 @@ app.use(expressStatusMonitor());
 
 /* --------  Routes --------  */
 require('./modules/routes.js')(router)
+require('./modules/infra/swagger')(router)
 app.use(router)
 /* --------  Routes Ends --------  */
 
