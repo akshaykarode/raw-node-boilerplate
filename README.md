@@ -10,6 +10,7 @@
 - Express Status Monitor
 - Swagger (Swagger UI + Swagger Editor)
 - Sequelize
+- Liquibase
 
 ## Running the project
 - Quick Start : `npm start`

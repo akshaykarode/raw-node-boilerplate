@@ -21,6 +21,7 @@
         }
       }
     },
+    "liquibase_connection_uri":"jdbc:postgresql://192.168.2.213:5432/",
     "session":{
       "cookie":{"secure":false,"maxAge":3600000}
     },
@@ -41,22 +42,23 @@
     "host":"localhost",
     "databases": {
       "db_migration":{
-        "host"     : "192.*.*.*",
-        "user"     : "dev-*-*",
-        "password" : "pwd",
-        "dialect"  : "postgres",
-        "connectionURI": "postgres://dev-*-*:pwd@192.*.*.*:5432/db_migration",
-        "pool": {
-          "max": 5,
-          "min": 0,
-          "acquire": 30000,
-          "idle": 10000,
-          "evict": 60000,
-          "handleDisconnects": true,
-          "timezone":"utc"
-        }
+      "host"     : "192.168.2.213",
+      "user"     : "dev-akshay-user",
+      "password" : "8FHh92Wu7pbWkeft",
+      "dialect"  : "postgres",
+      "connectionURI": "postgres://dev-akshay-user:8FHh92Wu7pbWkeft@192.168.2.213:5432/db_migration",
+      "pool": {
+        "max": 5,
+        "min": 0,
+        "acquire": 30000,
+        "idle": 10000,
+        "evict": 60000,
+        "handleDisconnects": true,
+        "timezone":"utc"
       }
+    }
     },
+    "liquibase_connection_uri":"jdbc:postgresql://192.168.2.213:5432/",
     "session":{
       "cookie":{"secure":false,"maxAge":3600000}
     },
@@ -93,6 +95,7 @@
         }
       }
     },
+    "liquibase_connection_uri":"jdbc:postgresql://192.168.2.213:5432/",
     "session":{
       "cookie":{"secure":false,"maxAge":3600000}
     },

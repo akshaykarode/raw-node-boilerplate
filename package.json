@@ -8,7 +8,9 @@
     "test": "NODE_ENV=test PORT=4123 jest --coverage --logHeapUsage --forceExit",
     "docker:build": "docker build --build-arg NODE_ENV=production -t raw-boilerplate .",
     "docker:run": "docker run -p 4000:4000 raw-boilerplate",
-    "swagger-editor": "docker pull swaggerapi/swagger-editor && docker run -d -p 4001:8080 swaggerapi/swagger-editor"
+    "swagger-editor": "docker pull swaggerapi/swagger-editor && docker run -d -p 4001:8080 swaggerapi/swagger-editor",
+    "migration": "LQ_OP=UP node ./scripts/liquibase_init.js",
+    "undo-migration": "LQ_OP=DOWN node ./scripts/liquibase_init.js"
   },
   "keywords": [],
   "author": "akshay",
@@ -21,6 +23,7 @@
     "express": "4.17.1",
     "express-status-monitor": "^1.2.6",
     "jsonwebtoken": "8.5.1",
+    "liquibase": "0.0.3",
     "lodash": "4.17.15",
     "method-override": "3.0.0",
     "moment": "2.24.0",
