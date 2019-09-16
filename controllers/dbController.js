@@ -1,13 +1,8 @@
-var Q = require('q'),
-		_ = require('lodash'),
-		forEach = require('async-foreach').forEach,
-		Helpers = require('./../modules/helpers')
+const db_migrationDB = require("./../modules/infra/database/models/db_migration");
 
-exports.getUsers = function(req, res, next) {
-	db.getUsers(req.body)
-		.then(function(result){
-			res.status(200).send(result)
-		})
+exports.getUsers = async function(req, res, next) {
+	var result = await db_migrationDB.raw_express_boilerplate_users.findAll({})
+	res.status(200).send(result)
 }
 
 /* ----------------------methods---------------------- */

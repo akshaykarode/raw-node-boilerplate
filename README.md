@@ -9,6 +9,7 @@
 - Stryker
 - Express Status Monitor
 - Swagger (Swagger UI + Swagger Editor)
+- Sequelize
 
 ## Running the project
 - Quick Start : `npm start`

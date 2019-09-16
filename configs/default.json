@@ -3,17 +3,22 @@
     "envName": "production",
     "protocol":"http",
     "host":"localhost",
-    "db": {
-      "host"     : "localhost",
-      "user"     : "root",
-      "password" : "root",
-      "database" : "testdb",
-      "connectionLimit": 50,
-      "useTransaction": {
-        "connectionLimit": 1
-      },
-      "useCursor": {
-        "connectionLimit": 1
+    "databases": {
+      "db_migration":{
+        "host"     : "192.*.*.*",
+        "user"     : "dev-*-*",
+        "password" : "pwd",
+        "dialect"  : "postgres",
+        "connectionURI": "postgres://dev-*-*:pwd@192.*.*.*:5432/db_migration",
+        "pool": {
+          "max": 5,
+          "min": 0,
+          "acquire": 30000,
+          "idle": 10000,
+          "evict": 60000,
+          "handleDisconnects": true,
+          "timezone":"utc"
+        }
       }
     },
     "session":{
@@ -34,17 +39,22 @@
     "envName": "development",
     "protocol":"http",
     "host":"localhost",
-    "db": {
-      "host"     : "localhost",
-      "user"     : "root",
-      "password" : "root",
-      "database" : "testdb",
-      "connectionLimit": 50,
-      "useTransaction": {
-        "connectionLimit": 1
-      },
-      "useCursor": {
-        "connectionLimit": 1
+    "databases": {
+      "db_migration":{
+        "host"     : "192.*.*.*",
+        "user"     : "dev-*-*",
+        "password" : "pwd",
+        "dialect"  : "postgres",
+        "connectionURI": "postgres://dev-*-*:pwd@192.*.*.*:5432/db_migration",
+        "pool": {
+          "max": 5,
+          "min": 0,
+          "acquire": 30000,
+          "idle": 10000,
+          "evict": 60000,
+          "handleDisconnects": true,
+          "timezone":"utc"
+        }
       }
     },
     "session":{
@@ -65,17 +75,22 @@
     "envName": "development",
     "protocol":"http",
     "host":"localhost",
-    "db": {
-      "host"     : "localhost",
-      "user"     : "root",
-      "password" : "root",
-      "database" : "testdb",
-      "connectionLimit": 50,
-      "useTransaction": {
-        "connectionLimit": 1
-      },
-      "useCursor": {
-        "connectionLimit": 1
+    "databases": {
+      "db_migration":{
+        "host"     : "192.*.*.*",
+        "user"     : "dev-*-*",
+        "password" : "pwd",
+        "dialect"  : "postgres",
+        "connectionURI": "postgres://dev-*-*:pwd@192.*.*.*:5432/db_migration",
+        "pool": {
+          "max": 5,
+          "min": 0,
+          "acquire": 30000,
+          "idle": 10000,
+          "evict": 60000,
+          "handleDisconnects": true,
+          "timezone":"utc"
+        }
       }
     },
     "session":{

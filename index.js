@@ -12,10 +12,10 @@ const _config = require('./configs/default.json')
 const Logger = require('./modules/infra/logger')
 const CustomError = require('./modules/comman/error')
 // var DB = require('./modules/db')
+
 // Global
 config = _config[process.env.NODE_ENV] || _config['development'];
-app.locals.env=config;
-// db = new DB(config.db)
+__basedir = __dirname;
 // Global Ends
 
 /* -------- App Configs --------  */

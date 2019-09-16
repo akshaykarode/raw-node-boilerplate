@@ -1,6 +1,6 @@
 var Helpers = require('./helpers')
 var Authentication = require('./../controllers/loginController.js')
-var dbController = require('./../controllers/dbController.js')
+// var dbController = require('./../controllers/dbController.js')
 
 module.exports = function(router){
 	router.get("/", Authentication.welcome);
@@ -10,6 +10,6 @@ module.exports = function(router){
 	router.get("/logout", Authentication.logout);
 
 	/* ------------------ DB Operations------------------ */
-	router.get("/get-users", dbController.getUsers);
+	// router.get("/get-users", dbController.getUsers);
 
 }
