@@ -10,7 +10,9 @@
     "docker:run": "docker run -p 4000:4000 raw-boilerplate",
     "swagger-editor": "docker pull swaggerapi/swagger-editor && docker run -d -p 4001:8080 swaggerapi/swagger-editor",
     "migration": "LQ_OP=UP node ./scripts/liquibase_init.js",
-    "undo-migration": "LQ_OP=DOWN node ./scripts/liquibase_init.js"
+    "undo-migration": "LQ_OP=DOWN node ./scripts/liquibase_init.js",
+    "pretest": "./node_modules/eslint/bin/eslint.js --ignore-path .gitignore . --fix",
+    "eslint-autofix": "./node_modules/eslint/bin/eslint.js --fix --fix-type problem,suggestion,layout"
   },
   "keywords": [],
   "author": "akshay",
@@ -39,10 +41,14 @@
     "winston-elasticsearch": "^0.7.13"
   },
   "devDependencies": {
-    "jest": "^24.9.0",
     "@stryker-mutator/core": "^1.1.1",
     "@stryker-mutator/javascript-mutator": "^1.1.1",
-    "@stryker-mutator/jest-runner": "^1.1.1"
+    "@stryker-mutator/jest-runner": "^1.1.1",
+    "eslint": "^6.4.0",
+    "eslint-config-google": "^0.14.0",
+    "husky": "^3.0.5",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.2.5"
   },
   "jest": {
     "coverageDirectory": "./coverage",
@@ -51,5 +57,13 @@
     "roots": [
       "./test/unit"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": ["./node_modules/eslint/bin/eslint.js"]
   }
 }
