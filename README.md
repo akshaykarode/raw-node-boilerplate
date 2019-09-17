@@ -22,19 +22,19 @@
 - `npm run docker:build`
 - `npm run docker:run`
 
-## Running Unit Tests
+## Unit Tests
 - `npm run test`
 
-## Running Mutation Tests
+##  Mutation Tests
 - `stryker run`
 - `npx stryker run --fileLogLevel trace --logLevel debug` (Debug Stryker Execution)
 
-## Running Swagger Editor
+## Swagger Editor
 - `npm run swagger-editor`
 
-## Running Migration
+## Liquibase Migration
 - `npm run migration`
 - `LQ_OP_COUNT=1 npm run undo-migration` (Rollback with Count : LQ_OP_COUNT : 1 as Default )
 
 ## Running Linter
-- `npm run linter <filepath/folder-pattern>` (Lint for specific files)
+- `npm run eslint-autofix <filepath/folder-pattern>` (Lint for specific files)
