@@ -26,6 +26,9 @@ module.exports = {
     "comma-spacing": ["error", { "before": false, "after": true }],
     "max-len": ["error", { "code": 150 }],
     "no-invalid-this":0,
+    "no-global-assign":0,
+    "new-cap":0,
+    "no-unused-vars":0,
     "require-jsdoc": ["error", {
       "require": {
           "FunctionDeclaration": true,
