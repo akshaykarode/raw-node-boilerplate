@@ -21,7 +21,7 @@
         }
       }
     },
-    "liquibase_connection_uri":"jdbc:postgresql://192.168.2.213:5432/",
+    "liquibase_connection_uri":"jdbc:postgresql://1192.*.*.*:5432/",
     "session":{
       "cookie":{"secure":false,"maxAge":3600000}
     },
@@ -58,7 +58,7 @@
         }
       }
     },
-    "liquibase_connection_uri":"jdbc:postgresql://192.168.2.213:5432/",
+    "liquibase_connection_uri":"jdbc:postgresql://1192.*.*.*:5432/",
     "session":{
       "cookie":{"secure":false,"maxAge":3600000}
     },
@@ -95,7 +95,7 @@
         }
       }
     },
-    "liquibase_connection_uri":"jdbc:postgresql://192.168.2.213:5432/",
+    "liquibase_connection_uri":"jdbc:postgresql://1192.*.*.*:5432/",
     "session":{
       "cookie":{"secure":false,"maxAge":3600000}
     },
