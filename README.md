@@ -11,6 +11,7 @@
 - Swagger (Swagger UI + Swagger Editor)
 - Sequelize
 - Liquibase
+- ESLint (Autofix CLI + Git Pre-Commit Hook)
 
 ## Running the project
 - Quick Start : `npm start`
@@ -30,3 +31,10 @@
 
 ## Running Swagger Editor
 - `npm run swagger-editor`
+
+## Running Migration
+- `npm run migration`
+- `LQ_OP_COUNT=1 npm run undo-migration` (Rollback with Count : LQ_OP_COUNT : 1 as Default )
+
+## Running Linter
+- `npm run linter <filepath/folder-pattern>` (Lint for specific files)
