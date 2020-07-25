@@ -43,7 +43,7 @@ app.use(expressStatusMonitor());
 /* --------  App Configs Ends --------  */
 
 /* --------  Routes --------  */
-require('./modules/routes')(router)
+require('./modules/routes')(router);
 require('./modules/util/swagger')(router);
 app.use(router);
 /* --------  Routes Ends --------  */
@@ -54,5 +54,5 @@ app.use(function(err, req, res, next) {
 });
 /* --------  Global Error Handler Ends --------  */
 
-console.log('Server is listening at http://%s:%s', hostname, app.get('port'), ' ENV:', global.config.envName);
+console.log('Server is listening at http://%s:%s', hostname, app.get('port'), ' ENV:', config.envName);
 app.listen(app.get('port'), hostname);
