@@ -8,11 +8,11 @@
     "test": "NODE_ENV=test PORT=4123 jest --coverage --logHeapUsage --forceExit",
     "docker:build": "docker build --build-arg NODE_ENV=production -t raw-boilerplate .",
     "docker:run": "docker run -p 4000:4000 raw-boilerplate",
-    "swagger-editor": "docker pull swaggerapi/swagger-editor && docker run -d -p 4001:8080 swaggerapi/swagger-editor",
     "migration": "LQ_OP=UP node ./scripts/liquibase_init.js",
     "undo-migration": "LQ_OP=DOWN node ./scripts/liquibase_init.js",
-    "pretest": "./node_modules/eslint/bin/eslint.js --ignore-path .gitignore . --fix",
-    "eslint-autofix": "./node_modules/eslint/bin/eslint.js --fix --fix-type problem,suggestion,layout"
+    "eslint-autofix": "./node_modules/eslint/bin/eslint.js --fix --fix-type problem,suggestion,layout",
+    "sonarqube": "docker pull sonarqube && docker run -d -p 9000:9000 -p 9092:9092 sonarqube",
+    "sonar": "node ./scripts/sonar-project.js"
   },
   "keywords": [],
   "author": "akshay",
@@ -35,6 +35,7 @@
     "q": "1.5.1",
     "sequelize": "^5.18.4",
     "stryker-cli": "^1.0.0",
+    "swagger-express-jsdoc": "^1.0.4",
     "swagger-ui-express": "^4.1.0",
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^4.1.0",
@@ -48,7 +49,8 @@
     "eslint-config-google": "^0.14.0",
     "husky": "^3.0.5",
     "jest": "^24.9.0",
-    "lint-staged": "^9.2.5"
+    "lint-staged": "^9.2.5",
+    "sonarqube-scanner": "^2.5.0"
   },
   "jest": {
     "coverageDirectory": "./coverage",
@@ -64,6 +66,8 @@
     }
   },
   "lint-staged": {
-    "*.js": ["./node_modules/eslint/bin/eslint.js"]
+    "*.js": [
+      "./node_modules/eslint/bin/eslint.js"
+    ]
   }
 }

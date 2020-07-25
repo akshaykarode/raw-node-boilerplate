@@ -9,14 +9,14 @@ const hostname = process.env.HOSTNAME || 'localhost';
 const publicDir = __dirname + '/public';
 const _config = require('./configs/default.json');
 
-const Logger = require('./modules/infra/logger');
 const CustomError = require('./modules/comman/error');
 // var DB = require('./modules/db')
 
 // Global
-/* global config, __basedir */
-config = _config[process.env.NODE_ENV] || _config['development'];
-__basedir = __dirname;
+/* global config, basedir, Logger */
+global.config = _config[process.env.NODE_ENV] || _config['development'];
+global.basedir = __dirname;
+global.Logger = require('./modules/util/logger');
 // Global Ends
 
 /* -------- App Configs --------  */
@@ -38,14 +38,13 @@ app.use(bodyParser.urlencoded({
   limit: '100mb',
 }));
 
-app.use(Logger(config));
 app.use(express.static(publicDir));
 app.use(expressStatusMonitor());
 /* --------  App Configs Ends --------  */
 
 /* --------  Routes --------  */
-require('./modules/routes.js')(router);
-require('./modules/infra/swagger')(router);
+require('./modules/routes')(router)
+require('./modules/util/swagger')(router);
 app.use(router);
 /* --------  Routes Ends --------  */
 
@@ -55,5 +54,5 @@ app.use(function(err, req, res, next) {
 });
 /* --------  Global Error Handler Ends --------  */
 
-console.log('Server is listening at http://%s:%s', hostname, app.get('port'), ' ENV:', config.envName);
+console.log('Server is listening at http://%s:%s', hostname, app.get('port'), ' ENV:', global.config.envName);
 app.listen(app.get('port'), hostname);

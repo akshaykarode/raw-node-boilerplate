@@ -23,13 +23,13 @@ console.log('LQIBASE OPERATION COUNT : ', command.arg);
 
 asyncforEach(databases, function(dbName, index, arr) {
   const done = this.async();
-  const changeLogPath=path.join(__basedir, 'modules', 'infra', 'database', 'migration', dbName, 'db.changelog-master.xml');
+  const changeLogPath=path.join(__basedir, 'modules', 'util', 'database', 'migration', dbName, 'db.changelog-master.xml');
   console.log('ChangeLogPath : ', changeLogPath);
   if (fs.existsSync(changeLogPath)) {
     console.log('===== Migrating : ', dbName, ' =====');
     liquibase({
-      liquibase: path.join(__basedir, 'modules', 'infra', 'database', 'migration', 'liquibase-core-3.5.3.jar'),
-      classpath: path.join(__basedir, 'modules', 'infra', 'database', 'migration', 'postgresql-42.2.8.jar'),
+      liquibase: path.join(__basedir, 'modules', 'util', 'database', 'migration', 'liquibase-core-3.5.3.jar'),
+      classpath: path.join(__basedir, 'modules', 'util', 'database', 'migration', 'postgresql-42.2.8.jar'),
       changeLogFile: changeLogPath,
       url: config.liquibase_connection_uri+dbName,
       username: config.databases[dbName].user,
